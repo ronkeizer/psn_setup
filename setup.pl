@@ -374,23 +374,23 @@ sub create_conf
 		%nm_versions=%{$ref};
 	}
 
-	while (1){
-		if (%nm_versions){
-			print "These are the loaded NM versions:\n";
-			foreach my $key (keys %nm_versions){
-				print "$key\n";
-			}
-			print"Would you like to add another one [y/n] ?\n";
-			last unless( confirm() );
-		}else{
-			print "No NM versions have been found. You need to add at least one.\n";
-		}
+	# while (1){
+	# 	if (%nm_versions){
+	# 		print "These are the loaded NM versions:\n";
+	# 		foreach my $key (keys %nm_versions){
+	# 			print "$key\n";
+	# 		}
+	# 		print"Would you like to add another one [y/n] ?\n";
+	# 		last unless( confirm() );
+	# 	}else{
+	# 		print "No NM versions have been found. You need to add at least one.\n";
+	# 	}
 		
-		my ($path,$version_label) = get_nm_version();
-		unless ($path eq '0'){
-			$nm_versions{$path}=$version_label;
-		}
-	}
+	# 	my ($path,$version_label) = get_nm_version();
+	# 	unless ($path eq '0'){
+	# 		$nm_versions{$path}=$version_label;
+	# 	}
+	# }
 	if (%nm_versions){
 		my %psn_names;
 		foreach my $version (keys %nm_versions){
